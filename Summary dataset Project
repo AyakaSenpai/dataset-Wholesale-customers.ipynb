@@ -1,4 +1,5 @@
-
+SUMMARY DATASET
+ 
 **📊 Customer Segmentation Classification using Random Forest**
 Notebook ini berisi implementasi pipeline klasifikasi menggunakan algoritma Random Forest untuk memprediksi jenis pelanggan berdasarkan data pembelanjaan. Target klasifikasi adalah Channel (Horeca vs Retail).
 
