@@ -1,0 +1,60 @@
+
+**📊 Customer Segmentation Classification using Random Forest**
+Notebook ini berisi implementasi pipeline klasifikasi menggunakan algoritma Random Forest untuk memprediksi jenis pelanggan berdasarkan data pembelanjaan. Target klasifikasi adalah Channel (Horeca vs Retail).
+
+**🚀 Langkah-langkah Analisis**
+
+**1. Import Library**
+Pertama-tama, dilakukan import berbagai library:
+•	pandas untuk manipulasi data
+•	matplotlib dan seaborn untuk visualisasi
+•	scikit-learn untuk preprocessing dan pemodelan
+
+**2. Load Dataset**
+Dataset dibaca dari file .csv menggunakan pd.read_csv(). Dataset berisi data pembelanjaan pelanggan dengan fitur-fitur seperti:
+•	Fresh, Milk, Grocery, Frozen, Detergents_Paper, Delicassen
+•	Target: Channel (1 = Horeca, 2 = Retail)
+
+**3. Analisis Distribusi Target**
+Distribusi kategori Channel divisualisasikan dengan countplot. Hasilnya menunjukkan data relatif seimbang antar dua kelas, sehingga cocok untuk klasifikasi.
+
+**4. Korelasi Antar Fitur**
+Korelasi antar fitur divisualisasikan dalam bentuk heatmap. Ditemukan korelasi tinggi antara:
+•	Grocery, Milk, dan Detergents_Paper
+Hal ini penting karena korelasi tinggi bisa memengaruhi performa model.
+
+**5. Preprocessing**
+•	Fitur (X) dan target (y) dipisahkan.
+•	Data dibagi menjadi data latih dan data uji (70:30).
+•	Normalisasi fitur dilakukan dengan StandardScaler agar fitur berada pada skala yang seragam.
+
+**6. Pelatihan Model - Random Forest**
+Model klasifikasi dilatih menggunakan RandomForestClassifier, yang merupakan metode ensemble berbasis decision tree dan cocok untuk data kategori.
+
+**7. Evaluasi Model**
+Model dievaluasi dengan:
+•	Confusion Matrix
+•	Classification Report (Precision, Recall, F1-Score)
+•	5-Fold Cross-Validation Accuracy
+Tujuannya untuk memastikan model tidak hanya akurat, tetapi juga stabil.
+
+**8. Feature Importance**
+Feature importance ditampilkan menggunakan barplot. Fitur yang paling berkontribusi terhadap prediksi:
+•	Detergents_Paper
+•	Grocery
+•	Milk
+
+**9. ROC Curve**
+Model dievaluasi lebih lanjut menggunakan ROC Curve. Nilai AUC yang tinggi menunjukkan kemampuan model dalam membedakan dua kelas target.
+**🧠 Tools & Teknologi**
+•	Python
+•	Pandas, Matplotlib, Seaborn
+•	scikit-learn (RandomForest, preprocessing, metrics)
+
+**📁 Dataset**
+Dataset berasal dari https://archive.ics.uci.edu/dataset/292/wholesale+customers. Data ini merepresentasikan pola pembelanjaan konsumen berdasarkan kategori produk.
+
+**📌 Kesimpulan**
+Model Random Forest mampu memberikan performa yang baik dalam mengklasifikasikan jenis pelanggan berdasarkan pola belanja. Analisis korelasi dan feature importance memberikan insight tambahan untuk memahami perilaku konsumen.
+
+
